@@ -1,5 +1,11 @@
-﻿.mdl-layout__tab-panel {
-    height: calc(100% - 112px);
+﻿.mdl-layout__content {
+    display: flex !important;
+    overflow-y: hidden !important;
+}
+.mdl-layout__tab-panel {
+    height: 100%;
+    width: 100%;
+    -height: calc(100% - 112px);
 }
 .status-card {
     float: left;
@@ -21,7 +27,42 @@
         }
     .status-card .mdl-card__supporting-text {
         height: 250px;
+        position: relative;
     }
+
+.server_lobby_control_container {
+    float: left;
+    bottom: 10px;
+    position: absolute;
+}
+.server_lobby_control_container .mdl-switch {
+    float: left;
+    width: auto;
+    margin-top: 5px;
+}
+.server_lobby_control_container .mdl-button {
+    float: left;
+    margin-left: 27px;
+}
+
+.playlist-container {
+    height: 260px;
+    border: 1px solid rgba(0,0,0,.12);
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.05);
+    overflow-y: scroll;
+}
+.playerlist-container ul {
+    padding: 0;
+    margin: 0;
+}
+.playlist-container ul li {
+    padding: 5px 10px;
+}
+.playlist-container ul li:hover {
+    background: rgba(0,0,0,0.05);
+    cursor: pointer;
+}
 .playerlist-container {
     height: 100%;
     width: 525px;
@@ -42,6 +83,11 @@
         background-repeat: no-repeat !important;
         background-position: center !important;
     }
+
+
+
+
+
 .middle-container {
     float: left;
     height: 100%;
@@ -83,6 +129,13 @@
         height: calc(100% - 65px - 45px);
         box-sizing: content-box;
     }
+.banlist .mdl-list__item-secondary-action {
+         color: rgba(0,0,0,.54);
+     }
+.banlist .mdl-list__item-secondary-action:hover { 
+    color: red; 
+}
+
 .vip-container {
     border-top: 0 !important;
 }
@@ -107,38 +160,38 @@
     font-weight: 500;
     padding-bottom: 4px;
 }
-.banlist .mdl-list__item-secondary-action {
-    color: rgba(0,0,0,.54);
-}
-    .banlist .mdl-list__item-secondary-action:hover { 
-        color: red; 
-    }
-
-.playlist-container {
-    height: 260px;
-    border: 1px solid rgba(0,0,0,.12);
+.vip-add, .ban-add {
+    height: 46px;
+    padding-left: 15px;
     box-sizing: border-box;
-    background: rgba(0,0,0,0.05);
-    overflow-y: scroll;
+    position: relative;
+    border-top: 1px solid rgba(0,0,0,.12);
 }
-    .playerlist-container ul {
-        padding: 0;
-        margin: 0;
-    }
-        .playlist-container ul li {
-            padding: 5px 10px;
-        }
-            .playlist-container ul li:hover {
-                background: rgba(0,0,0,0.05);
-                cursor: pointer;
-            }
+.vip-add button, .ban-add button {
+    position: absolute;
+    right: 5px;
+    top: 2px;
+}
+.vip-add .mdl-textfield, .ban-add .mdl-textfield {
+    float: left;
+    width: 240px;
+    margin-top: 5px;
+}
+
+
+
+
+
 .right-container {
     float: left;
     height: 100%;
-    width: calc(100% - 1165px);
+    width: calc(100% - 1150px);
 }
-    .right-container .right-one {
+    .right-container .right-one, .right-container .right-two {
         height: 50%;
+    }
+    .right-container .right-two {
+        padding: 3px 10px;
     }
     .right-container h4 {
         padding-top: 8px;
@@ -184,28 +237,17 @@
         .log-container .log .log-item {
             margin: 0;
         }
-
-.vip-add, .ban-add {
-    height: 46px;
-    padding-left: 15px;
-    box-sizing: border-box;
-    position: relative;
-    border-top: 1px solid rgba(0,0,0,.12);
+.right-two .server-privacy, .right-two .server-biped, .right-two .server-max-players, .right-two .server-xdelay-timer, .right-two .server-br-fix {
+    width: 150px !important;s
 }
-    .vip-add button, .ban-add button {
-        position: absolute;
-        right: 5px;
-        top: 2px;
-    }
-    .vip-add .mdl-textfield, .ban-add .mdl-textfield {
-        float: left;
-        width: 240px;
-        margin-top: 5px;
-    }
 
-.mdl-textfield--slim {
-    padding: 0 !important;
-}
+
+
+
+
+    .mdl-textfield--slim {
+        padding: 0 !important;
+    }
 .mdl-textfield--slim:not(.getmdl-select) .mdl-textfield__label {
     top: 6px !important;
 }

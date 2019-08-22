@@ -6,12 +6,12 @@
     <script src="Scripts/jquery-1.6.4.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <link rel="stylesheet" href="Content/Material-Select.css" />
     <script src="Scripts/jquery.signalR-2.4.1.min.js"></script>
     <script src="Scripts/Material-Better-Tooltip.js"></script>
+    <script src="Scripts/Material-Select.js"></script>
     <script src="Scripts/mentula-extra.js"></script>
     <script src="Scripts/mentula.js"></script>
-    <script src="Scripts/dialog-polyfill.js"></script>
-    <link href="Content/dialog-polyfill.css"/>
     <link rel="stylesheet" href="Content/mentula.css" />
 </head>
 <body>
@@ -64,7 +64,15 @@
                 <b>Next Variant</b>
                 <pre data-elm="nextvariant"></pre>
             </p>
-
+            <div class="server_lobby_control_container">
+                <label for="server_lobby_control" class="server-freeze-lobby mdl-switch mdl-js-switch mdl-js-ripple-effect">
+                    <input type="checkbox" id="server_lobby_control" class="mdl-switch__input">
+                    <span class="mdl-switch__label">Freeze Lobby</span>
+                </label>
+                <a class="server-force-start mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Start Game
+                </a>
+            </div>
         </div>
         <div class="mdl-card__actions mdl-card--border">
             <a class="mentula-skip mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
@@ -118,7 +126,7 @@
         </div>
         <div class="vip-container">
             <h4 class="mdl-typography--display-1">VIP List <i class="material-icons">refresh</i></h4>
-            <div class="viplist mdl-list">
+            <div class="vip mdl-list">
 
             </div>
             <div class="vip-add">
@@ -138,6 +146,65 @@
             <div class="log-container">
                 <div class="log">
                 </div>
+            </div>
+        </div>
+        <div class="right-two">
+            <div class="server-privacy mdl-select mdl-js-select mdl-textfield mdl-js-textfield mdl-textfield--floating-label" data-type="simple" data-width="150">
+                <input id="server_privacy" class="mdl-textfield__input" type="text" />
+                <label for="server_privacy" class="mdl-textfield__label">
+                    Privacy
+                </label>
+                <ul>
+                    <li class="mdl-menu__item" data-value="Open">Open</li>
+                    <li class="mdl-menu__item" data-value="VIP">VIP</li>
+                    <li class="mdl-menu__item" data-value="Closed">Closed</li>
+                </ul>
+            </div>
+            <div class="server-biped mdl-select mdl-js-select mdl-textfield mdl-js-textfield mdl-textfield--floating-label" data-type="simple" data-width="150">
+                <input id="server_biped" class="mdl-textfield__input" type="text" />
+                <label for="server_biped" class="mdl-textfield__label">
+                    Forced Biped
+                </label>
+                <ul>
+                    <li class="mdl-menu__item" data-value="Disabled">None</li>
+                    <li class="mdl-menu__item" data-value="Master_Chief">SP Spartan</li>
+                    <li class="mdl-menu__item" data-value="Spartan">MP Spartan</li>
+                    <li class="mdl-menu__item" data-value="Elite">Elite</li>
+                </ul>
+            </div>
+            <div class="server-max-players mdl-select mdl-js-select mdl-textfield mdl-js-textfield mdl-textfield--floating-label" data-type="simple" data-width="150">
+                <input id="server_players" class="mdl-textfield__input" type="text" />
+                <label for="server_players" class="mdl-textfield__label">
+                    Max Players
+                </label>
+                <ul>
+                    <li class="mdl-menu__item">1</li>
+                    <li class="mdl-menu__item">2</li>
+                    <li class="mdl-menu__item">3</li>
+                    <li class="mdl-menu__item">4</li>
+                    <li class="mdl-menu__item">5</li>
+                    <li class="mdl-menu__item">6</li>
+                    <li class="mdl-menu__item">7</li>
+                    <li class="mdl-menu__item">8</li>
+                    <li class="mdl-menu__item">9</li>
+                    <li class="mdl-menu__item">10</li>
+                    <li class="mdl-menu__item">11</li>
+                    <li class="mdl-menu__item">12</li>
+                    <li class="mdl-menu__item">13</li>
+                    <li class="mdl-menu__item">14</li>
+                    <li class="mdl-menu__item">15</li>
+                    <li class="mdl-menu__item">16</li>
+                </ul>
+            </div>
+            <div class="server-xdelay-timer mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" value="10" type="text" pattern="^\d+$" id="server_xdely_timer">
+                <label class="mdl-textfield__label" for="server_xdely_timer">XDelay Timer</label>
+                <span class="mdl-textfield__error">Invalid Input</span>
+            </div>
+            <div class="server-br-fix mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" value="400" type="text" pattern="^\d+$" id="server_br_fix">
+                <label class="mdl-textfield__label" for="server_xdely_timer">Battle Rifle Velocity</label>
+                <span class="mdl-textfield__error">Invalid Input</span>
             </div>
         </div>
     </div>
