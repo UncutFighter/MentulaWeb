@@ -4,12 +4,13 @@
 .status-card {
     float: left;
     height: 100%;
+    border-right: 1px solid rgba(0,0,0,.12);
 }
     .status-card .mdl-card__title {
         height: 256px;
         -background: url(https://vignette.wikia.nocookie.net/halo/images/f/fe/Lockout546.jpg/revision/latest?cb=20110501022546);
         background-size: 105% 105% !important;
-        filter: contrast(1.259);
+        filter: contrast(1.4) saturate(1.2);
         flex-grow: 0 !important;
     }
         .status-card .mdl-card__title .mdl-card__title-text {
@@ -25,9 +26,13 @@
     height: 100%;
     width: 525px;
     float: left;
+    border-right: 1px solid rgba(0,0,0,.12);
+    box-sizing: border-box;
 }
 .player-table {
     width: 100%;
+    border-right: 0 !important;
+    border-left: 0 !important;
 }
     .player-table td, .player-table tr {
         height: 47px !important;
@@ -37,10 +42,16 @@
         background-repeat: no-repeat !important;
         background-position: center !important;
     }
-.banlist-container {
-    height: 100%;
+.middle-container {
     float: left;
+    height: 100%;
     width: 310px;
+}
+.banlist-container, .vip-container {
+    height: 50%;
+    width: 100%;
+    border: 1px solid rgba(0,0,0,.12);
+    border-left: none;
 }
     .banlist-container h4 {
         margin: 8px 0 0px;
@@ -55,24 +66,47 @@
         font-size: 20px;
         line-height: 35px;
         font-weight: 500;
-        padding-bottom: 5px;
+        padding-bottom: 4px;
     }
-        .banlist-container h4 i {
+        .banlist-container h4 i, .vip-container h4 i {
             position: absolute;
             right: 6px;
             top: 5px;
             font-size: 30px;
             cursor: pointer;
         }
-            .banlist-container h4 i:hover {
+            .banlist-container h4 i:hover, .vip-container h4 i:hover {
                 color: rgba(0,0,0,.28);
             }
     .banlist-container .mdl-list {
         overflow-y: scroll;
-        height: calc(100% - 66px);
+        height: calc(100% - 65px - 45px);
         box-sizing: content-box;
     }
-
+.vip-container {
+    border-top: 0 !important;
+}
+    .vip-container .mdl-list {
+        overflow-y: scroll;
+        height: calc(100% - 65px - 45px);
+        box-sizing: content-box;
+    }
+.vip-container h4 {
+    padding-top: 8px;
+    margin: 0;
+    text-align: center;
+    color: rgba(0,0,0,.54);
+    border: 1px solid rgba(0,0,0,.12);
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    box-sizing: border-box;
+    position: relative;
+    font-size: 20px;
+    line-height: 35px;
+    font-weight: 500;
+    padding-bottom: 4px;
+}
 .banlist .mdl-list__item-secondary-action {
     color: rgba(0,0,0,.54);
 }
@@ -103,8 +137,11 @@
     height: 100%;
     width: calc(100% - 1165px);
 }
+    .right-container .right-one {
+        height: 50%;
+    }
     .right-container h4 {
-        margin: 8px 0 0px;
+        padding-top: 8px;
         text-align: center;
         color: rgba(0,0,0,.54);
         border: 1px solid rgba(0,0,0,.12);
@@ -116,6 +153,7 @@
         font-size: 20px;
         line-height: 35px;
         font-weight: 500;
+        margin: 0;
         padding-bottom: 5px;
     }
         .right-container h4 i {
@@ -129,7 +167,7 @@
                 color: rgba(0,0,0,.28);
             }
 .log-container {
-    height: calc(50% - 41px);
+    height: calc(100% - 47px);
     width: 100%;
     border-bottom: 1px solid rgba(0,0,0,.12);
     -moz-box-sizing: border-box;
@@ -146,3 +184,31 @@
         .log-container .log .log-item {
             margin: 0;
         }
+
+.vip-add, .ban-add {
+    height: 46px;
+    padding-left: 15px;
+    box-sizing: border-box;
+    position: relative;
+    border-top: 1px solid rgba(0,0,0,.12);
+}
+    .vip-add button, .ban-add button {
+        position: absolute;
+        right: 5px;
+        top: 2px;
+    }
+    .vip-add .mdl-textfield, .ban-add .mdl-textfield {
+        float: left;
+        width: 240px;
+        margin-top: 5px;
+    }
+
+.mdl-textfield--slim {
+    padding: 0 !important;
+}
+.mdl-textfield--slim:not(.getmdl-select) .mdl-textfield__label {
+    top: 6px !important;
+}
+.mdl-textfield--slim:not(.getmdl-select) .mdl-textfield__label:after {
+    bottom: 0 !important;
+}
