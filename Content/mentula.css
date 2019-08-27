@@ -1,4 +1,8 @@
-﻿.mdl-layout__content {
+﻿.mdl-layout__container {
+    min-width: 1675px !important;
+    min-height: 979px !important;
+}
+.mdl-layout__content {
     display: flex !important;
     overflow-y: hidden !important;
 }
